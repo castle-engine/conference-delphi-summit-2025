@@ -1,0 +1,191 @@
+{
+  "$$ClassName" : "TCastleUserInterface",
+  "FullSize" : true,
+  "Name" : "RootGroup",
+  "$Children" : [
+    {
+      "$$ClassName" : "TCastleViewport",
+      "Background" : "Background1",
+      "Camera" : "Camera1",
+      "FullSize" : true,
+      "Items" : {
+        "$$ClassName" : "TCastleRootTransform",
+        "PhysicsProperties" : {
+          "$$ClassName" : "TPhysicsProperties",
+          "LayerCollisions" : {
+            "$$ClassName" : "TCastleLayerCollisions"
+          },
+          "LayerNames" : {
+            "$$ClassName" : "TCastleLayerNames"
+          }
+        },
+        "$Children" : [
+          {
+            "$$ClassName" : "TCastleCamera",
+            "Name" : "Camera1",
+            "Orthographic" : {
+              "$$ClassName" : "TCastleOrthographic"
+            },
+            "Perspective" : {
+              "$$ClassName" : "TCastlePerspective"
+            },
+            "TranslationPersistent" : {
+              "$$ClassName" : "TCastleVector3Persistent",
+              "Y" : 2.0000000000000000E+000,
+              "Z" : 4.0000000000000000E+000
+            }
+          },
+          {
+            "$$ClassName" : "TCastlePointLight",
+            "Name" : "PointLight1",
+            "Shadows" : true,
+            "TranslationPersistent" : {
+              "$$ClassName" : "TCastleVector3Persistent",
+              "X" : 4.0000000000000000E+000,
+              "Y" : 3.0000000000000000E+000,
+              "Z" : 1.0000000000000000E+000
+            }
+          },
+          {
+            "$$ClassName" : "TCastlePlane",
+            "Name" : "Plane1",
+            "RenderOptions" : {
+              "$$ClassName" : "TCastleScene.TSceneRenderOptions",
+              "WholeSceneManifold" : true
+            },
+            "SizePersistent" : {
+              "$$ClassName" : "TCastleVector2Persistent",
+              "X" : 1.0000000000000000E+003,
+              "Y" : 1.0000000000000000E+003
+            }
+          },
+          {
+            "$$ClassName" : "TCastleDirectionalLight",
+            "Name" : "DirectionalLight1",
+            "RotationPersistent" : {
+              "$$ClassName" : "TCastleVector4RotationPersistent",
+              "W" : 1.4928448200225830E+000,
+              "X" : -9.9999982118606567E-001
+            },
+            "TranslationPersistent" : {
+              "$$ClassName" : "TCastleVector3Persistent",
+              "Y" : 6.3046107292175293E+000
+            }
+          },
+          {
+            "$$ClassName" : "TCastleScene",
+            "ExposeTransforms" : [
+            ],
+            "Name" : "SceneBalconyCrossCorner1",
+            "RenderOptions" : {
+              "$$ClassName" : "TCastleScene.TSceneRenderOptions",
+              "WholeSceneManifold" : true
+            },
+            "TranslationPersistent" : {
+              "$$ClassName" : "TCastleVector3Persistent",
+              "X" : -8.7636909484863281E+000,
+              "Z" : 1.1642589569091797E+000
+            },
+            "Url" : "castle-data:/quaternius_medieval_village/glTF/Balcony_Cross_Corner.gltf"
+          },
+          {
+            "$$ClassName" : "TCastleScene",
+            "ExposeTransforms" : [
+            ],
+            "Name" : "SceneBalconyCrossStraight1",
+            "RenderOptions" : {
+              "$$ClassName" : "TCastleScene.TSceneRenderOptions",
+              "WholeSceneManifold" : true
+            },
+            "TranslationPersistent" : {
+              "$$ClassName" : "TCastleVector3Persistent",
+              "X" : -4.3255648612976074E+000,
+              "Z" : 2.1309080123901367E+000
+            },
+            "Url" : "castle-data:/quaternius_medieval_village/glTF/Balcony_Cross_Straight.gltf"
+          },
+          {
+            "$$ClassName" : "TCastleScene",
+            "ExposeTransforms" : [
+            ],
+            "Name" : "SceneBalconySimpleCorner1",
+            "RenderOptions" : {
+              "$$ClassName" : "TCastleScene.TSceneRenderOptions",
+              "WholeSceneManifold" : true
+            },
+            "TranslationPersistent" : {
+              "$$ClassName" : "TCastleVector3Persistent",
+              "X" : -1.0652637481689453E-001,
+              "Z" : 4.0000000000000000E+000
+            },
+            "Url" : "castle-data:/quaternius_medieval_village/glTF/Balcony_Simple_Corner.gltf"
+          },
+          {
+            "$$ClassName" : "TCastleScene",
+            "ExposeTransforms" : [
+            ],
+            "Name" : "SceneBalconySimpleStraight1",
+            "RenderOptions" : {
+              "$$ClassName" : "TCastleScene.TSceneRenderOptions",
+              "WholeSceneManifold" : true
+            },
+            "TranslationPersistent" : {
+              "$$ClassName" : "TCastleVector3Persistent",
+              "X" : 4.2686691284179688E+000,
+              "Z" : 1.5503616333007812E+000
+            },
+            "Url" : "castle-data:/quaternius_medieval_village/glTF/Balcony_Simple_Straight.gltf"
+          }
+        ]
+      },
+      "Name" : "Viewport1",
+      "$NonVisualComponents" : [
+        {
+          "$$ClassName" : "TCastleBackground",
+          "Name" : "Background1"
+        }
+      ],
+      "InternalDesignCamera" : {
+        "$$ClassName" : "TCastleCamera",
+        "Name" : "",
+        "Orthographic" : {
+          "$$ClassName" : "TCastleOrthographic"
+        },
+        "Perspective" : {
+          "$$ClassName" : "TCastlePerspective"
+        },
+        "RotationPersistent" : {
+          "$$ClassName" : "TCastleVector4RotationPersistent",
+          "W" : 2.4789938926696777E+000,
+          "X" : -1.0614527761936188E-001,
+          "Y" : 9.5129275321960449E-001,
+          "Z" : 2.8943946957588196E-001
+        },
+        "ScalePersistent" : {
+          "$$ClassName" : "TCastleVector3Persistent",
+          "Y" : 1.0000001192092896E+000
+        },
+        "TranslationPersistent" : {
+          "$$ClassName" : "TCastleVector3Persistent",
+          "X" : 6.0421462059020996E+000,
+          "Y" : 9.8345289230346680E+000,
+          "Z" : -5.6589560508728027E+000
+        }
+      },
+      "InternalDesignNavigations[dnFly]" : {
+        "$$ClassName" : "TCastleWalkNavigationDesign",
+        "Name" : ""
+      },
+      "InternalDesignNavigations[dnExamine]" : {
+        "$$ClassName" : "TCastleExamineNavigationDesign",
+        "Exists" : false,
+        "Name" : ""
+      },
+      "InternalDesignNavigations[dn2D]" : {
+        "$$ClassName" : "TCastle2DNavigationDesign",
+        "Exists" : false,
+        "Name" : ""
+      }
+    }
+  ]
+}
