@@ -18,7 +18,7 @@ unit GameViewMain;
 
 interface
 
-uses Classes,
+uses Classes, Contnrs,
   CastleVectors, CastleComponentSerialize, CastleCameras,
   CastleUIControls, CastleControls, CastleKeysMouse;
 
@@ -42,7 +42,8 @@ var
 
 implementation
 
-uses SysUtils;
+uses SysUtils,
+  CastleInputs, CastleGameControllers;
 
 { TViewMain ----------------------------------------------------------------- }
 
@@ -53,8 +54,42 @@ begin
 end;
 
 procedure TViewMain.Start;
+
+  { Make TCastleWalkNavigation inputs work with the game controller
+    (joystick, gamepad, etc.). }
+  procedure ConfigureWalkNavigationForController;
+  var
+    BindingAxis: TInputShortcutBindingControllerAxis;
+  begin
+    BindingAxis := TInputShortcutBindingControllerAxis.Create(FreeAtStop);
+    BindingAxis.Axis := gaLeftStick;
+    BindingAxis.Positive := true;
+    BindingAxis.Coord := 1;
+    WalkNavigation1.Input_Forward.Bindings.Add(BindingAxis);
+
+    BindingAxis := TInputShortcutBindingControllerAxis.Create(FreeAtStop);
+    BindingAxis.Axis := gaLeftStick;
+    BindingAxis.Positive := false;
+    BindingAxis.Coord := 1;
+    WalkNavigation1.Input_Backward.Bindings.Add(BindingAxis);
+
+    BindingAxis := TInputShortcutBindingControllerAxis.Create(FreeAtStop);
+    BindingAxis.Axis := gaLeftStick;
+    BindingAxis.Positive := true;
+    BindingAxis.Coord := 0;
+    WalkNavigation1.Input_RightStrafe.Bindings.Add(BindingAxis);
+
+    BindingAxis := TInputShortcutBindingControllerAxis.Create(FreeAtStop);
+    BindingAxis.Axis := gaLeftStick;
+    BindingAxis.Positive := false;
+    BindingAxis.Coord := 0;
+    WalkNavigation1.Input_LeftStrafe.Bindings.Add(BindingAxis);
+  end;
+
 begin
   inherited;
+  ConfigureWalkNavigationForController;
+  Controllers.Initialize;
 end;
 
 procedure TViewMain.Update(const SecondsPassed: Single; var HandleInput: Boolean);
