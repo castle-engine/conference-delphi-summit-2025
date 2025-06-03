@@ -33,9 +33,11 @@ type
     MainViewport: TCastleViewport;
     RectHint: TCastleRectangleControl;
     FactorySpawnBody: TCastleComponentFactory;
+    ButtonControllersInitialize: TCastleButton;
   private
     LeftTriggerPressed: Boolean;
     RightTriggerPressed: Boolean;
+    procedure ClickControllersInitialize(Sender: TObject);
   public
     constructor Create(AOwner: TComponent); override;
     procedure Start; override;
@@ -65,6 +67,8 @@ begin
   inherited;
   WalkNavigation1.UseGameController;
   Controllers.Initialize;
+  ButtonControllersInitialize.OnClick :=
+    {$ifdef FPC}@{$endif} ClickControllersInitialize;
 end;
 
 procedure TViewMain.Update(const SecondsPassed: Single; var HandleInput: Boolean);
@@ -91,6 +95,7 @@ begin
   Assert(LabelFps <> nil, 'If you remove LabelFps from the design, remember to remove also the assignment "LabelFps.Caption := ..." from code');
   LabelFps.Caption := 'FPS: ' + Container.Fps.ToString;
 
+  // use mouse look when holding right mouse button
   WalkNavigation1.MouseLook := buttonRight in Container.MousePressed;
 
   { Left and right triggers are analog, they are axes in
@@ -108,6 +113,11 @@ begin
       { Fake keyEnter press when left trigger is pressed. }
       InputKey(Container.MousePosition, keyEnter, CharEnter, []));
   end;
+
+  // update ButtonControllersInitialize.Caption to visualize detected controllers
+  ButtonControllersInitialize.Caption := Format('Reinitialize controllers (%d)', [
+    Controllers.Count
+  ]);
 end;
 
 function TViewMain.Press(const Event: TInputPressRelease): Boolean;
@@ -185,6 +195,13 @@ begin
     SpawnBody;
     Exit(true); // input was handled
   end;
+end;
+
+procedure TViewMain.ClickControllersInitialize(Sender: TObject);
+begin
+  { Should never be needed on Windows.
+    May be needed on Linux to detect newly connected controllers. }
+  Controllers.Initialize;
 end;
 
 end.
