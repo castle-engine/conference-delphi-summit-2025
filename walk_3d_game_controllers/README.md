@@ -1,6 +1,14 @@
 # 3D Walking With Game Controllers
 
+Show simple 3D level where you can
+
+- walk using game controllers (joystick, gamepad)
+
+- spawn and push with physics.
+
 Using [Castle Game Engine](https://castle-engine.io/).
+
+![Screenshot](screenshot.png)
 
 ## Building
 
