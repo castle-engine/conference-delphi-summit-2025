@@ -313,26 +313,25 @@
         },
         "RotationPersistent" : {
           "$$ClassName" : "TCastleVector4RotationPersistent",
-          "W" : 2.2706310749053955E+000,
-          "X" : -2.4667412042617798E-001,
-          "Y" : 8.5645389556884766E-001,
-          "Z" : 4.5347365736961365E-001
+          "W" : 2.6430199146270752E+000,
+          "X" : -2.5383785367012024E-002,
+          "Y" : 9.9490237236022949E-001,
+          "Z" : 9.7597301006317139E-002
         },
         "ScalePersistent" : {
           "$$ClassName" : "TCastleVector3Persistent",
-          "Y" : 1.0000001192092896E+000,
-          "Z" : 1.0000001192092896E+000
+          "Y" : 1.0000001192092896E+000
         },
         "TranslationPersistent" : {
           "$$ClassName" : "TCastleVector3Persistent",
-          "X" : 2.5107166290283203E+001,
-          "Y" : 3.1677082061767578E+001,
-          "Z" : -1.0556363105773926E+001
+          "X" : 5.4777302742004395E+000,
+          "Y" : 6.7487382888793945E+000,
+          "Z" : -1.9112684249877930E+001
         }
       },
       "InternalDesignNavigations[dnFly]" : {
         "$$ClassName" : "TCastleWalkNavigationDesign",
-        "MoveSpeed" : 7.3564231872558594E+001,
+        "MoveSpeed" : 4.6415889739990234E+001,
         "Name" : ""
       },
       "InternalDesignNavigations[dnExamine]" : {
@@ -368,6 +367,51 @@
       },
       "VerticalAnchorParent" : "vpTop",
       "VerticalAnchorSelf" : "vpTop"
+    },
+    {
+      "$$ClassName" : "TCastleRectangleControl",
+      "AutoSizeToChildren" : true,
+      "AutoSizeToChildrenPaddingRight" : 1.0000000000000000E+001,
+      "AutoSizeToChildrenPaddingTop" : 1.0000000000000000E+001,
+      "ColorPersistent" : {
+        "$$ClassName" : "TCastleColorPersistent",
+        "Alpha" : 4.5882353186607361E-001,
+        "Blue" : 0.0000000000000000E+000,
+        "Green" : 0.0000000000000000E+000,
+        "Red" : 0.0000000000000000E+000
+      },
+      "Name" : "RectHint",
+      "TranslationPersistent" : {
+        "$$ClassName" : "TCastleVector2Persistent",
+        "X" : 1.0000000000000000E+001,
+        "Y" : -1.0000000000000000E+001
+      },
+      "VerticalAnchorParent" : "vpTop",
+      "VerticalAnchorSelf" : "vpTop",
+      "$Children" : [
+        {
+          "$$ClassName" : "TCastleLabel",
+          "ColorPersistent" : {
+            "$$ClassName" : "TCastleColorPersistent",
+            "Green" : 9.9607843160629272E-001,
+            "Red" : 9.6862745285034180E-001
+          },
+          "Name" : "Label1",
+          "Text" : [
+            "Walk: AWSD / gamepad left stick",
+            "Look around: mouse with right button / gamepad right stick",
+            "Run: Shift / press gamepad left stick",
+            "Jump: Space / gamepad A",
+            "Crouch: C / gamepad B",
+            "Toggle this help: F1 / gamepad Menu"
+          ],
+          "TranslationPersistent" : {
+            "$$ClassName" : "TCastleVector2Persistent",
+            "X" : 1.0000000000000000E+001,
+            "Y" : 1.0000000000000000E+001
+          }
+        }
+      ]
     }
   ]
 }

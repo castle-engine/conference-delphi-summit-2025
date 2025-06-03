@@ -30,6 +30,7 @@ type
       These fields will be automatically initialized at Start. }
     LabelFps: TCastleLabel;
     WalkNavigation1: TCastleWalkNavigation;
+    RectHint: TCastleRectangleControl;
   public
     constructor Create(AOwner: TComponent); override;
     procedure Start; override;
@@ -85,14 +86,11 @@ begin
     not handled in children controls.
   }
 
-  // Use this to handle keys:
-  {
-  if Event.IsKey(keyXxx) then
+  if Event.IsKey(keyF1) or Event.IsController(gbMenu) then
   begin
-    // DoSomething;
-    Exit(true); // key was handled
+    RectHint.Exists := not RectHint.Exists;
+    Exit(true); // input was handled
   end;
-  }
 end;
 
 end.
