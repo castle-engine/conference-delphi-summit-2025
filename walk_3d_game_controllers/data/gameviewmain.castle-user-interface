@@ -1189,7 +1189,7 @@
                       },
                       "Name" : "Label24",
                       "Text" : [
-                        "Mouse left"
+                        "Enter"
                       ],
                       "TranslationPersistent" : {
                         "$$ClassName" : "TCastleVector2Persistent",
@@ -1220,7 +1220,7 @@
                       },
                       "Name" : "Label25",
                       "Text" : [
-                        "Right trigger"
+                        "Left trigger"
                       ],
                       "TranslationPersistent" : {
                         "$$ClassName" : "TCastleVector2Persistent",
@@ -1290,7 +1290,7 @@
                       },
                       "Name" : "Label27",
                       "Text" : [
-                        "Enter"
+                        "Mouse left"
                       ],
                       "TranslationPersistent" : {
                         "$$ClassName" : "TCastleVector2Persistent",
@@ -1321,7 +1321,7 @@
                       },
                       "Name" : "Label28",
                       "Text" : [
-                        "Left trigger"
+                        "Right trigger"
                       ],
                       "TranslationPersistent" : {
                         "$$ClassName" : "TCastleVector2Persistent",

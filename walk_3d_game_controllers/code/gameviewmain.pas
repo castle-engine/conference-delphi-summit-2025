@@ -186,13 +186,13 @@ begin
 
   if Event.IsMouseButton(buttonLeft) then
   begin
-    PushForce;
+    SpawnBody;
     Exit(true); // input was handled
   end;
 
   if Event.IsKey(keyEnter) then
   begin
-    SpawnBody;
+    PushForce;
     Exit(true); // input was handled
   end;
 end;
