@@ -52,20 +52,261 @@
             "Perspective" : {
               "$$ClassName" : "TCastlePerspective"
             },
+            "RotationPersistent" : {
+              "$$ClassName" : "TCastleVector4RotationPersistent",
+              "W" : 2.6000561714172363E+000,
+              "Y" : -9.9999922513961792E-001
+            },
             "TranslationPersistent" : {
               "$$ClassName" : "TCastleVector3Persistent",
+              "X" : -3.6756682395935059E+000,
               "Y" : 2.0000000000000000E+000,
-              "Z" : 4.0000000000000000E+000
+              "Z" : -2.6356563568115234E+001
             }
           },
           {
             "$$ClassName" : "TCastlePointLight",
+            "Intensity" : 1.0000000000000000E+003,
             "Name" : "PointLight1",
+            "Shadows" : true,
             "TranslationPersistent" : {
               "$$ClassName" : "TCastleVector3Persistent",
-              "X" : 4.0000000000000000E+000,
-              "Y" : 3.0000000000000000E+000,
-              "Z" : 1.0000000000000000E+000
+              "X" : -1.0449289321899414E+001,
+              "Y" : 1.9876819610595703E+001,
+              "Z" : -9.3436613082885742E+000
+            }
+          },
+          {
+            "$$ClassName" : "TCastleScene",
+            "ExposeTransforms" : [
+            ],
+            "Name" : "SceneVillageLevel1",
+            "PreciseCollisions" : true,
+            "RenderOptions" : {
+              "$$ClassName" : "TCastleScene.TSceneRenderOptions",
+              "WholeSceneManifold" : true
+            },
+            "Url" : "castle-data:/village_level.gltf",
+            "$Behaviors" : [
+              {
+                "$$ClassName" : "TCastleMeshCollider",
+                "Mesh" : "SceneVillageLevel1",
+                "Name" : "MeshCollider1"
+              },
+              {
+                "$$ClassName" : "TCastleRigidBody",
+                "Name" : "RigidBody1"
+              }
+            ]
+          },
+          {
+            "$$ClassName" : "TCastleDirectionalLight",
+            "Name" : "DirectionalLight1",
+            "RotationPersistent" : {
+              "$$ClassName" : "TCastleVector4RotationPersistent",
+              "W" : 1.9237531423568726E+000,
+              "X" : -9.9999982118606567E-001
+            },
+            "TranslationPersistent" : {
+              "$$ClassName" : "TCastleVector3Persistent",
+              "Y" : 3.0064289093017578E+001,
+              "Z" : -3.8440494537353516E+000
+            }
+          },
+          {
+            "$$ClassName" : "TCastleDirectionalLight",
+            "Name" : "DirectionalLight2",
+            "RotationPersistent" : {
+              "$$ClassName" : "TCastleVector4RotationPersistent",
+              "W" : 1.1658747196197510E+000,
+              "X" : -9.9999994039535522E-001
+            },
+            "TranslationPersistent" : {
+              "$$ClassName" : "TCastleVector3Persistent",
+              "Y" : 3.2877048492431641E+001,
+              "Z" : 3.7913680076599121E+000
+            }
+          },
+          {
+            "$$ClassName" : "TCastleTransform",
+            "Name" : "CratesPile",
+            "TranslationPersistent" : {
+              "$$ClassName" : "TCastleVector3Persistent",
+              "X" : 1.5112009048461914E+001
+            },
+            "$Children" : [
+              {
+                "$$ClassName" : "TCastleTransformDesign",
+                "Name" : "DesignVillageCrate1",
+                "TranslationPersistent" : {
+                  "$$ClassName" : "TCastleVector3Persistent",
+                  "Y" : 4.8165030479431152E+000
+                },
+                "Url" : "castle-data:/village_crate.castle-transform"
+              },
+              {
+                "$$ClassName" : "TCastleTransformDesign",
+                "Name" : "DesignVillageCrate2",
+                "RotationPersistent" : {
+                  "$$ClassName" : "TCastleVector4RotationPersistent",
+                  "W" : 4.1887876391410828E-001,
+                  "Z" : 1.0000003576278687E+000
+                },
+                "TranslationPersistent" : {
+                  "$$ClassName" : "TCastleVector3Persistent",
+                  "X" : 1.4722106456756592E+000,
+                  "Y" : 8.5953989028930664E+000
+                },
+                "Url" : "castle-data:/village_crate.castle-transform"
+              },
+              {
+                "$$ClassName" : "TCastleTransformDesign",
+                "Name" : "DesignVillageCrate3",
+                "RotationPersistent" : {
+                  "$$ClassName" : "TCastleVector4RotationPersistent",
+                  "W" : 4.1887876391410828E-001,
+                  "Z" : 1.0000003576278687E+000
+                },
+                "TranslationPersistent" : {
+                  "$$ClassName" : "TCastleVector3Persistent",
+                  "X" : -9.7060358524322510E-001,
+                  "Y" : 7.5077881813049316E+000
+                },
+                "Url" : "castle-data:/village_crate.castle-transform"
+              },
+              {
+                "$$ClassName" : "TCastleTransformDesign",
+                "Name" : "DesignVillageCrate4",
+                "RotationPersistent" : {
+                  "$$ClassName" : "TCastleVector4RotationPersistent",
+                  "W" : 4.1887876391410828E-001,
+                  "Z" : 1.0000003576278687E+000
+                },
+                "TranslationPersistent" : {
+                  "$$ClassName" : "TCastleVector3Persistent",
+                  "X" : 3.0199446678161621E+000,
+                  "Y" : 9.2844944000244141E+000
+                },
+                "Url" : "castle-data:/village_crate.castle-transform"
+              },
+              {
+                "$$ClassName" : "TCastleTransformDesign",
+                "Name" : "DesignVillageCrate5",
+                "RotationPersistent" : {
+                  "$$ClassName" : "TCastleVector4RotationPersistent",
+                  "W" : 4.1887876391410828E-001,
+                  "Z" : 1.0000003576278687E+000
+                },
+                "TranslationPersistent" : {
+                  "$$ClassName" : "TCastleVector3Persistent",
+                  "X" : 2.2041757106781006E+000,
+                  "Y" : 1.1116742134094238E+001
+                },
+                "Url" : "castle-data:/village_crate.castle-transform"
+              },
+              {
+                "$$ClassName" : "TCastleTransformDesign",
+                "Name" : "DesignVillageCrate6",
+                "RotationPersistent" : {
+                  "$$ClassName" : "TCastleVector4RotationPersistent",
+                  "W" : 4.1887876391410828E-001,
+                  "Z" : 1.0000003576278687E+000
+                },
+                "TranslationPersistent" : {
+                  "$$ClassName" : "TCastleVector3Persistent",
+                  "X" : -3.2553052902221680E-001,
+                  "Y" : 9.9904451370239258E+000
+                },
+                "Url" : "castle-data:/village_crate.castle-transform"
+              },
+              {
+                "$$ClassName" : "TCastleTransformDesign",
+                "Name" : "DesignVillageCrate7",
+                "RotationPersistent" : {
+                  "$$ClassName" : "TCastleVector4RotationPersistent",
+                  "W" : 4.1887876391410828E-001,
+                  "Z" : 1.0000003576278687E+000
+                },
+                "TranslationPersistent" : {
+                  "$$ClassName" : "TCastleVector3Persistent",
+                  "X" : 9.2454469203948975E-001,
+                  "Y" : 7.1827273368835449E+000
+                },
+                "Url" : "castle-data:/village_crate.castle-transform"
+              },
+              {
+                "$$ClassName" : "TCastleTransformDesign",
+                "Name" : "DesignVillageCrate8",
+                "RotationPersistent" : {
+                  "$$ClassName" : "TCastleVector4RotationPersistent",
+                  "W" : 4.1887876391410828E-001,
+                  "Z" : 1.0000003576278687E+000
+                },
+                "TranslationPersistent" : {
+                  "$$ClassName" : "TCastleVector3Persistent",
+                  "X" : 9.2454469203948975E-001,
+                  "Y" : 7.1827273368835449E+000,
+                  "Z" : -2.0828461647033691E+000
+                },
+                "Url" : "castle-data:/village_crate.castle-transform"
+              },
+              {
+                "$$ClassName" : "TCastleTransformDesign",
+                "Name" : "DesignVillageCrate9",
+                "RotationPersistent" : {
+                  "$$ClassName" : "TCastleVector4RotationPersistent",
+                  "W" : 4.1887876391410828E-001,
+                  "Z" : 1.0000003576278687E+000
+                },
+                "TranslationPersistent" : {
+                  "$$ClassName" : "TCastleVector3Persistent",
+                  "X" : 1.9595378637313843E-001,
+                  "Y" : 8.8191719055175781E+000,
+                  "Z" : -2.0828461647033691E+000
+                },
+                "Url" : "castle-data:/village_crate.castle-transform"
+              },
+              {
+                "$$ClassName" : "TCastleTransformDesign",
+                "Name" : "DesignVillageCrate10",
+                "RotationPersistent" : {
+                  "$$ClassName" : "TCastleVector4RotationPersistent",
+                  "W" : 4.1887876391410828E-001,
+                  "Z" : 1.0000003576278687E+000
+                },
+                "TranslationPersistent" : {
+                  "$$ClassName" : "TCastleVector3Persistent",
+                  "X" : 3.6106352806091309E+000,
+                  "Y" : 1.0339485168457031E+001,
+                  "Z" : -2.0828461647033691E+000
+                },
+                "Url" : "castle-data:/village_crate.castle-transform"
+              },
+              {
+                "$$ClassName" : "TCastleTransformDesign",
+                "Name" : "DesignVillageCrate11",
+                "RotationPersistent" : {
+                  "$$ClassName" : "TCastleVector4RotationPersistent",
+                  "W" : 4.1887876391410828E-001,
+                  "Z" : 1.0000003576278687E+000
+                },
+                "TranslationPersistent" : {
+                  "$$ClassName" : "TCastleVector3Persistent",
+                  "X" : 3.0818624496459961E+000,
+                  "Y" : 1.1527130126953125E+001,
+                  "Z" : -2.0828461647033691E+000
+                },
+                "Url" : "castle-data:/village_crate.castle-transform"
+              }
+            ]
+          },
+          {
+            "$$ClassName" : "TCastlePointLight",
+            "Name" : "PointLight2",
+            "TranslationPersistent" : {
+              "$$ClassName" : "TCastleVector3Persistent",
+              "Y" : 2.3229827880859375E+000,
+              "Z" : 2.8187954425811768E+000
             }
           }
         ]
@@ -75,6 +316,13 @@
         {
           "$$ClassName" : "TCastleBackground",
           "Name" : "Background1"
+        }
+      ],
+      "$Children" : [
+        {
+          "$$ClassName" : "TCastleWalkNavigation",
+          "MoveSpeed" : 1.0000000000000000E+001,
+          "Name" : "WalkNavigation1"
         }
       ],
       "InternalDesignCamera" : {
@@ -88,24 +336,26 @@
         },
         "RotationPersistent" : {
           "$$ClassName" : "TCastleVector4RotationPersistent",
-          "W" : 9.7860872745513916E-001,
-          "X" : -9.6320194005966187E-001,
-          "Y" : 2.3965778946876526E-001,
-          "Z" : 1.2168119102716446E-001
+          "W" : 2.2706310749053955E+000,
+          "X" : -2.4667412042617798E-001,
+          "Y" : 8.5645389556884766E-001,
+          "Z" : 4.5347365736961365E-001
         },
         "ScalePersistent" : {
           "$$ClassName" : "TCastleVector3Persistent",
+          "Y" : 1.0000001192092896E+000,
           "Z" : 1.0000001192092896E+000
         },
         "TranslationPersistent" : {
           "$$ClassName" : "TCastleVector3Persistent",
-          "X" : 8.2171261310577393E-003,
-          "Y" : 7.8156485557556152E+000,
-          "Z" : 5.4505929946899414E+000
+          "X" : 2.5107166290283203E+001,
+          "Y" : 3.1677082061767578E+001,
+          "Z" : -1.0556363105773926E+001
         }
       },
       "InternalDesignNavigations[dnFly]" : {
         "$$ClassName" : "TCastleWalkNavigationDesign",
+        "MoveSpeed" : 7.3564231872558594E+001,
         "Name" : ""
       },
       "InternalDesignNavigations[dnExamine]" : {
