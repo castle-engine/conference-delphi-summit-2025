@@ -2,6 +2,13 @@
   "$$ClassName" : "TCastleUserInterface",
   "FullSize" : true,
   "Name" : "RootGroup",
+  "$NonVisualComponents" : [
+    {
+      "$$ClassName" : "TCastleComponentFactory",
+      "Name" : "FactorySpawnBody",
+      "Url" : "castle-data:/village_crate.castle-transform"
+    }
+  ],
   "$Children" : [
     {
       "$$ClassName" : "TCastleViewport",
@@ -78,11 +85,14 @@
           },
           {
             "$$ClassName" : "TCastleDirectionalLight",
+            "Intensity" : 5.0000000000000000E-001,
             "Name" : "DirectionalLight1",
             "RotationPersistent" : {
               "$$ClassName" : "TCastleVector4RotationPersistent",
-              "W" : 1.9237531423568726E+000,
-              "X" : -9.9999982118606567E-001
+              "W" : 1.9808627367019653E+000,
+              "X" : -9.4031047821044922E-001,
+              "Y" : -1.9465622305870056E-001,
+              "Z" : 2.7915218472480774E-001
             },
             "TranslationPersistent" : {
               "$$ClassName" : "TCastleVector3Persistent",
@@ -92,11 +102,14 @@
           },
           {
             "$$ClassName" : "TCastleDirectionalLight",
+            "Intensity" : 5.0000000000000000E-001,
             "Name" : "DirectionalLight2",
             "RotationPersistent" : {
               "$$ClassName" : "TCastleVector4RotationPersistent",
-              "W" : 1.1658747196197510E+000,
-              "X" : -9.9999994039535522E-001
+              "W" : 1.4900120496749878E+000,
+              "X" : -7.1491515636444092E-001,
+              "Y" : 5.8373612165451050E-001,
+              "Z" : -3.8490077853202820E-001
             },
             "TranslationPersistent" : {
               "$$ClassName" : "TCastleVector3Persistent",
@@ -285,10 +298,30 @@
               "Y" : 2.3229827880859375E+000,
               "Z" : 2.8187954425811768E+000
             }
+          },
+          {
+            "$$ClassName" : "TCastleScene",
+            "ExposeTransforms" : [
+            ],
+            "Name" : "Ground",
+            "RenderOptions" : {
+              "$$ClassName" : "TCastleScene.TSceneRenderOptions"
+            },
+            "Url" : "castle-data:/village_level_ground.gltf",
+            "$Behaviors" : [
+              {
+                "$$ClassName" : "TCastlePlaneCollider",
+                "Name" : "PlaneCollider1"
+              },
+              {
+                "$$ClassName" : "TCastleRigidBody",
+                "Name" : "RigidBody2"
+              }
+            ]
           }
         ]
       },
-      "Name" : "Viewport1",
+      "Name" : "MainViewport",
       "$NonVisualComponents" : [
         {
           "$$ClassName" : "TCastleBackground",
@@ -313,20 +346,20 @@
         },
         "RotationPersistent" : {
           "$$ClassName" : "TCastleVector4RotationPersistent",
-          "W" : 2.6430199146270752E+000,
-          "X" : -2.5383785367012024E-002,
-          "Y" : 9.9490237236022949E-001,
-          "Z" : 9.7597301006317139E-002
+          "W" : 3.2635164260864258E+000,
+          "X" : 3.2390316482633352E-003,
+          "Y" : 9.9832242727279663E-001,
+          "Z" : 5.7807888835668564E-002
         },
         "ScalePersistent" : {
           "$$ClassName" : "TCastleVector3Persistent",
-          "Y" : 1.0000001192092896E+000
+          "Y" : 1.0000002384185791E+000
         },
         "TranslationPersistent" : {
           "$$ClassName" : "TCastleVector3Persistent",
-          "X" : 5.4777302742004395E+000,
-          "Y" : 6.7487382888793945E+000,
-          "Z" : -1.9112684249877930E+001
+          "X" : 6.6631026268005371E+000,
+          "Y" : 3.6561851501464844E+000,
+          "Z" : -2.1318479537963867E+001
         }
       },
       "InternalDesignNavigations[dnFly]" : {
@@ -1303,6 +1336,10 @@
           ]
         }
       ]
+    },
+    {
+      "$$ClassName" : "TCastleCrosshair",
+      "Name" : "Crosshair1"
     }
   ]
 }

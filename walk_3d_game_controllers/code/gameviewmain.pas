@@ -19,7 +19,7 @@ unit GameViewMain;
 interface
 
 uses Classes, Contnrs,
-  CastleVectors, CastleComponentSerialize, CastleCameras,
+  CastleVectors, CastleComponentSerialize, CastleCameras, CastleViewport,
   CastleUIControls, CastleControls, CastleKeysMouse;
 
 type
@@ -30,7 +30,9 @@ type
       These fields will be automatically initialized at Start. }
     LabelFps: TCastleLabel;
     WalkNavigation1: TCastleWalkNavigation;
+    MainViewport: TCastleViewport;
     RectHint: TCastleRectangleControl;
+    FactorySpawnBody: TCastleComponentFactory;
   private
     LeftTriggerPressed: Boolean;
     RightTriggerPressed: Boolean;
@@ -47,7 +49,8 @@ var
 implementation
 
 uses SysUtils,
-  CastleInputs, CastleGameControllers, CastleStringUtils;
+  CastleInputs, CastleGameControllers, CastleStringUtils, CastleTransform,
+  CastleLog;
 
 { TViewMain ----------------------------------------------------------------- }
 
@@ -108,15 +111,47 @@ begin
 end;
 
 function TViewMain.Press(const Event: TInputPressRelease): Boolean;
+const
+  ForceStrength = 3000;
 
+  { Push TCastleRigidBody in front. }
   procedure PushForce;
+  var
+    CamPos, CamDir, CamUp: TVector3;
+    TransformHit: TCastleTransform;
   begin
-
+    // Shoot ray through the center of the viewport.
+    TransformHit := MainViewport.TransformHit(
+      Vector2(
+        MainViewport.EffectiveWidth / 2,
+        MainViewport.EffectiveHeight / 2),
+      false);
+    if (TransformHit <> nil) and
+       (TransformHit.RigidBody <> nil) and
+       // mesh and plane colliders are static anyway, pushing them would do nothing
+       (not (TransformHit.Collider is TCastleMeshCollider)) and
+       (not (TransformHit.Collider is TCastlePlaneCollider)) then
+    begin
+      WritelnLog('Hit transform %s', [TransformHit.Name]);
+      MainViewport.Camera.GetWorldView(CamPos, CamDir, CamUp);
+      TransformHit.RigidBody.AddForce(CamDir * ForceStrength, false);
+    end;
   end;
 
+  { Spawn body in front of the camera. }
   procedure SpawnBody;
+  var
+    CamPos, CamDir, CamUp: TVector3;
+    NewTransform: TCastleTransform;
   begin
+    MainViewport.Camera.GetWorldView(CamPos, CamDir, CamUp);
 
+    NewTransform := FactorySpawnBody.TransformLoad(FreeAtStop);
+    NewTransform.Translation := CamPos + CamDir * 2;
+    NewTransform.Direction := CamDir;
+    MainViewport.Items.Add(NewTransform);
+
+    NewTransform.RigidBody.AddForce(CamDir * ForceStrength, false);
   end;
 
 begin
