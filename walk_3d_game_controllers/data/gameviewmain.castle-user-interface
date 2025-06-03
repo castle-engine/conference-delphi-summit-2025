@@ -390,26 +390,917 @@
       "VerticalAnchorSelf" : "vpTop",
       "$Children" : [
         {
-          "$$ClassName" : "TCastleLabel",
-          "ColorPersistent" : {
-            "$$ClassName" : "TCastleColorPersistent",
-            "Green" : 9.9607843160629272E-001,
-            "Red" : 9.6862745285034180E-001
-          },
-          "Name" : "Label1",
-          "Text" : [
-            "Walk: AWSD / gamepad left stick",
-            "Look around: mouse with right button / gamepad right stick",
-            "Run: Shift / press gamepad left stick",
-            "Jump: Space / gamepad A",
-            "Crouch: C / gamepad B",
-            "Toggle this help: F1 / gamepad Menu"
-          ],
-          "TranslationPersistent" : {
-            "$$ClassName" : "TCastleVector2Persistent",
-            "X" : 1.0000000000000000E+001,
-            "Y" : 1.0000000000000000E+001
-          }
+          "$$ClassName" : "TCastleVerticalGroup",
+          "Name" : "VerticalGroup1",
+          "$Children" : [
+            {
+              "$$ClassName" : "TCastleHorizontalGroup",
+              "Name" : "HorizontalGroup1",
+              "VerticalAnchorParent" : "vpTop",
+              "VerticalAnchorSelf" : "vpTop",
+              "$Children" : [
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell1",
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.0000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Blue" : 9.8823529481887817E-001,
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 7.8431377187371254E-003
+                      },
+                      "Name" : "Label2",
+                      "Text" : [
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell2",
+                  "TranslationPersistent" : {
+                    "$$ClassName" : "TCastleVector2Persistent",
+                    "X" : 2.0000000000000000E+002
+                  },
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.2000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Blue" : 9.8823529481887817E-001,
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 7.8431377187371254E-003
+                      },
+                      "Name" : "Label3",
+                      "Text" : [
+                        "Keyboard / Mouse"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell3",
+                  "TranslationPersistent" : {
+                    "$$ClassName" : "TCastleVector2Persistent",
+                    "X" : 4.2000000000000000E+002
+                  },
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.0000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Blue" : 9.8823529481887817E-001,
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 7.8431377187371254E-003
+                      },
+                      "Name" : "Label4",
+                      "Text" : [
+                        "Game Controller"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$$ClassName" : "TCastleHorizontalGroup",
+              "Name" : "HorizontalGroup2",
+              "TranslationPersistent" : {
+                "$$ClassName" : "TCastleVector2Persistent",
+                "Y" : -3.2000000000000000E+001
+              },
+              "VerticalAnchorParent" : "vpTop",
+              "VerticalAnchorSelf" : "vpTop",
+              "$Children" : [
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell4",
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.0000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 9.6862745285034180E-001
+                      },
+                      "Name" : "Label5",
+                      "Text" : [
+                        "Walk"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell5",
+                  "TranslationPersistent" : {
+                    "$$ClassName" : "TCastleVector2Persistent",
+                    "X" : 2.0000000000000000E+002
+                  },
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.2000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 9.6862745285034180E-001
+                      },
+                      "Name" : "Label6",
+                      "Text" : [
+                        "AWSD"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell6",
+                  "TranslationPersistent" : {
+                    "$$ClassName" : "TCastleVector2Persistent",
+                    "X" : 4.2000000000000000E+002
+                  },
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.0000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 9.6862745285034180E-001
+                      },
+                      "Name" : "Label7",
+                      "Text" : [
+                        "Left stick"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$$ClassName" : "TCastleHorizontalGroup",
+              "Name" : "HorizontalGroup3",
+              "TranslationPersistent" : {
+                "$$ClassName" : "TCastleVector2Persistent",
+                "Y" : -6.4000000000000000E+001
+              },
+              "VerticalAnchorParent" : "vpTop",
+              "VerticalAnchorSelf" : "vpTop",
+              "$Children" : [
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell7",
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.0000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 1.2941177189350128E-001
+                      },
+                      "Name" : "Label8",
+                      "Text" : [
+                        "Look around"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell8",
+                  "TranslationPersistent" : {
+                    "$$ClassName" : "TCastleVector2Persistent",
+                    "X" : 2.0000000000000000E+002
+                  },
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.2000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 1.2941177189350128E-001
+                      },
+                      "Name" : "Label9",
+                      "Text" : [
+                        "Mouse right (move)"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell9",
+                  "TranslationPersistent" : {
+                    "$$ClassName" : "TCastleVector2Persistent",
+                    "X" : 4.2000000000000000E+002
+                  },
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.0000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 1.2941177189350128E-001
+                      },
+                      "Name" : "Label10",
+                      "Text" : [
+                        "Right stick"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$$ClassName" : "TCastleHorizontalGroup",
+              "Name" : "HorizontalGroup4",
+              "TranslationPersistent" : {
+                "$$ClassName" : "TCastleVector2Persistent",
+                "Y" : -9.6000000000000000E+001
+              },
+              "VerticalAnchorParent" : "vpTop",
+              "VerticalAnchorSelf" : "vpTop",
+              "$Children" : [
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell10",
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.0000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 9.6862745285034180E-001
+                      },
+                      "Name" : "Label11",
+                      "Text" : [
+                        "Run"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell11",
+                  "TranslationPersistent" : {
+                    "$$ClassName" : "TCastleVector2Persistent",
+                    "X" : 2.0000000000000000E+002
+                  },
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.2000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 9.6862745285034180E-001
+                      },
+                      "Name" : "Label12",
+                      "Text" : [
+                        "Shift"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell12",
+                  "TranslationPersistent" : {
+                    "$$ClassName" : "TCastleVector2Persistent",
+                    "X" : 4.2000000000000000E+002
+                  },
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.0000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 9.6862745285034180E-001
+                      },
+                      "Name" : "Label13",
+                      "Text" : [
+                        "Press left stick "
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$$ClassName" : "TCastleHorizontalGroup",
+              "Name" : "HorizontalGroup5",
+              "TranslationPersistent" : {
+                "$$ClassName" : "TCastleVector2Persistent",
+                "Y" : -1.2800000000000000E+002
+              },
+              "VerticalAnchorParent" : "vpTop",
+              "VerticalAnchorSelf" : "vpTop",
+              "$Children" : [
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell13",
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.0000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 1.2941177189350128E-001
+                      },
+                      "Name" : "Label14",
+                      "Text" : [
+                        "Jump"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell14",
+                  "TranslationPersistent" : {
+                    "$$ClassName" : "TCastleVector2Persistent",
+                    "X" : 2.0000000000000000E+002
+                  },
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.2000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 1.2941177189350128E-001
+                      },
+                      "Name" : "Label15",
+                      "Text" : [
+                        "Space"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell15",
+                  "TranslationPersistent" : {
+                    "$$ClassName" : "TCastleVector2Persistent",
+                    "X" : 4.2000000000000000E+002
+                  },
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.0000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 1.2941177189350128E-001
+                      },
+                      "Name" : "Label16",
+                      "Text" : [
+                        "A"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$$ClassName" : "TCastleHorizontalGroup",
+              "Name" : "HorizontalGroup6",
+              "TranslationPersistent" : {
+                "$$ClassName" : "TCastleVector2Persistent",
+                "Y" : -1.6000000000000000E+002
+              },
+              "VerticalAnchorParent" : "vpTop",
+              "VerticalAnchorSelf" : "vpTop",
+              "$Children" : [
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell16",
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.0000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 9.6862745285034180E-001
+                      },
+                      "Name" : "Label17",
+                      "Text" : [
+                        "Crouch"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell17",
+                  "TranslationPersistent" : {
+                    "$$ClassName" : "TCastleVector2Persistent",
+                    "X" : 2.0000000000000000E+002
+                  },
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.2000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 9.6862745285034180E-001
+                      },
+                      "Name" : "Label18",
+                      "Text" : [
+                        "C"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell18",
+                  "TranslationPersistent" : {
+                    "$$ClassName" : "TCastleVector2Persistent",
+                    "X" : 4.2000000000000000E+002
+                  },
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.0000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 9.6862745285034180E-001
+                      },
+                      "Name" : "Label19",
+                      "Text" : [
+                        "B"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$$ClassName" : "TCastleHorizontalGroup",
+              "Name" : "HorizontalGroup7",
+              "TranslationPersistent" : {
+                "$$ClassName" : "TCastleVector2Persistent",
+                "Y" : -1.9200000000000000E+002
+              },
+              "VerticalAnchorParent" : "vpTop",
+              "VerticalAnchorSelf" : "vpTop",
+              "$Children" : [
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell19",
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.0000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 1.2941177189350128E-001
+                      },
+                      "Name" : "Label20",
+                      "Text" : [
+                        "Toggle this help"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell20",
+                  "TranslationPersistent" : {
+                    "$$ClassName" : "TCastleVector2Persistent",
+                    "X" : 2.0000000000000000E+002
+                  },
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.2000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 1.2941177189350128E-001
+                      },
+                      "Name" : "Label21",
+                      "Text" : [
+                        "F1"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell21",
+                  "TranslationPersistent" : {
+                    "$$ClassName" : "TCastleVector2Persistent",
+                    "X" : 4.2000000000000000E+002
+                  },
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.0000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 1.2941177189350128E-001
+                      },
+                      "Name" : "Label22",
+                      "Text" : [
+                        "Menu (3 lines)"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$$ClassName" : "TCastleHorizontalGroup",
+              "Name" : "HorizontalGroup8",
+              "TranslationPersistent" : {
+                "$$ClassName" : "TCastleVector2Persistent",
+                "Y" : -2.2400000000000000E+002
+              },
+              "VerticalAnchorParent" : "vpTop",
+              "VerticalAnchorSelf" : "vpTop",
+              "$Children" : [
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell22",
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.0000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 9.6862745285034180E-001
+                      },
+                      "Name" : "Label23",
+                      "Text" : [
+                        "Push"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell23",
+                  "TranslationPersistent" : {
+                    "$$ClassName" : "TCastleVector2Persistent",
+                    "X" : 2.0000000000000000E+002
+                  },
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.2000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 9.6862745285034180E-001
+                      },
+                      "Name" : "Label24",
+                      "Text" : [
+                        "Mouse left"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell24",
+                  "TranslationPersistent" : {
+                    "$$ClassName" : "TCastleVector2Persistent",
+                    "X" : 4.2000000000000000E+002
+                  },
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.0000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 9.6862745285034180E-001
+                      },
+                      "Name" : "Label25",
+                      "Text" : [
+                        "Right trigger"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "$$ClassName" : "TCastleHorizontalGroup",
+              "Name" : "HorizontalGroup9",
+              "TranslationPersistent" : {
+                "$$ClassName" : "TCastleVector2Persistent",
+                "Y" : -2.5600000000000000E+002
+              },
+              "VerticalAnchorParent" : "vpTop",
+              "VerticalAnchorSelf" : "vpTop",
+              "$Children" : [
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell25",
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.0000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 1.2941177189350128E-001
+                      },
+                      "Name" : "Label26",
+                      "Text" : [
+                        "Spawn"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell26",
+                  "TranslationPersistent" : {
+                    "$$ClassName" : "TCastleVector2Persistent",
+                    "X" : 2.0000000000000000E+002
+                  },
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.2000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 1.2941177189350128E-001
+                      },
+                      "Name" : "Label27",
+                      "Text" : [
+                        "Enter"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell27",
+                  "TranslationPersistent" : {
+                    "$$ClassName" : "TCastleVector2Persistent",
+                    "X" : 4.2000000000000000E+002
+                  },
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.0000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 1.2941177189350128E-001
+                      },
+                      "Name" : "Label28",
+                      "Text" : [
+                        "Left trigger"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     }

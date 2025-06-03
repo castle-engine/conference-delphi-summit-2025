@@ -31,6 +31,9 @@ type
     LabelFps: TCastleLabel;
     WalkNavigation1: TCastleWalkNavigation;
     RectHint: TCastleRectangleControl;
+  private
+    LeftTriggerPressed: Boolean;
+    RightTriggerPressed: Boolean;
   public
     constructor Create(AOwner: TComponent); override;
     procedure Start; override;
@@ -44,7 +47,7 @@ var
 implementation
 
 uses SysUtils,
-  CastleInputs, CastleGameControllers;
+  CastleInputs, CastleGameControllers, CastleStringUtils;
 
 { TViewMain ----------------------------------------------------------------- }
 
@@ -62,6 +65,23 @@ begin
 end;
 
 procedure TViewMain.Update(const SecondsPassed: Single; var HandleInput: Boolean);
+
+  procedure SimulateAxisPressRelease(const AxisValue: Single; var LastPressed: Boolean;
+    const FakeEvent: TInputPressRelease);
+  var
+    NewPressed: Boolean;
+  begin
+    NewPressed := AxisValue > 0.5;
+    if LastPressed <> NewPressed then
+    begin
+      LastPressed := NewPressed;
+      if NewPressed then
+        Press(FakeEvent)
+      else
+        Release(FakeEvent);
+    end;
+  end;
+
 begin
   inherited;
   { This virtual method is executed every frame (many times per second). }
@@ -69,9 +89,36 @@ begin
   LabelFps.Caption := 'FPS: ' + Container.Fps.ToString;
 
   WalkNavigation1.MouseLook := buttonRight in Container.MousePressed;
+
+  { Left and right triggers are analog, they are axes in
+    TGameController.AxisLeft/RightTrigger, and they don't generate
+    any TInputPressRelease events when pressed.
+    However, we can track their value in Update, and manually simulate
+    "discrete" press events. }
+  if Controllers.Count > 0 then
+  begin
+    SimulateAxisPressRelease(Controllers[0].AxisRightTrigger, RightTriggerPressed,
+      { Fake left mouse button press when right trigger is pressed. }
+      InputMouseButton(Container.MousePosition, buttonLeft, 0, []));
+
+    SimulateAxisPressRelease(Controllers[0].AxisLeftTrigger, LeftTriggerPressed,
+      { Fake keyEnter press when left trigger is pressed. }
+      InputKey(Container.MousePosition, keyEnter, CharEnter, []));
+  end;
 end;
 
 function TViewMain.Press(const Event: TInputPressRelease): Boolean;
+
+  procedure PushForce;
+  begin
+
+  end;
+
+  procedure SpawnBody;
+  begin
+
+  end;
+
 begin
   Result := inherited;
   if Result then Exit; // allow the ancestor to handle keys
@@ -89,6 +136,18 @@ begin
   if Event.IsKey(keyF1) or Event.IsController(gbMenu) then
   begin
     RectHint.Exists := not RectHint.Exists;
+    Exit(true); // input was handled
+  end;
+
+  if Event.IsMouseButton(buttonLeft) then
+  begin
+    PushForce;
+    Exit(true); // input was handled
+  end;
+
+  if Event.IsKey(keyEnter) then
+  begin
+    SpawnBody;
     Exit(true); // input was handled
   end;
 end;
