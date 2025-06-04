@@ -1212,10 +1212,8 @@
       "TranslationPersistent" : {
         "$$ClassName" : "TCastleVector2Persistent",
         "X" : -2.0000000000000000E+001,
-        "Y" : -2.0000000000000000E+001
-      },
-      "VerticalAnchorParent" : "vpTop",
-      "VerticalAnchorSelf" : "vpTop"
+        "Y" : 6.0000000000000000E+001
+      }
     },
     {
       "$$ClassName" : "TCastleRectangleControl",
@@ -1233,10 +1231,8 @@
       "TranslationPersistent" : {
         "$$ClassName" : "TCastleVector2Persistent",
         "X" : 1.0000000000000000E+001,
-        "Y" : -1.0000000000000000E+001
+        "Y" : 1.0000000000000000E+001
       },
-      "VerticalAnchorParent" : "vpTop",
-      "VerticalAnchorSelf" : "vpTop",
       "$Children" : [
         {
           "$$ClassName" : "TCastleVerticalGroup",
@@ -2172,15 +2168,24 @@
       "CustomBackgroundPressed" : {
         "$$ClassName" : "TCastleImagePersistent"
       },
+      "HorizontalAnchorParent" : "hpRight",
+      "HorizontalAnchorSelf" : "hpRight",
       "Image" : {
         "$$ClassName" : "TCastleImagePersistent"
       },
       "Name" : "ButtonControllersInitialize",
       "TranslationPersistent" : {
         "$$ClassName" : "TCastleVector2Persistent",
-        "X" : 1.0000000000000000E+001,
+        "X" : -1.0000000000000000E+001,
         "Y" : 1.0000000000000000E+001
       }
+    },
+    {
+      "$$ClassName" : "TCastleDesign",
+      "EditorSelectOnHover" : false,
+      "FullSize" : true,
+      "Name" : "DesignEngineHeader",
+      "Url" : "castle-data:/engine_header.castle-user-interface"
     }
   ]
 }

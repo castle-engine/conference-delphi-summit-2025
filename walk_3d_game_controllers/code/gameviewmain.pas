@@ -20,7 +20,7 @@ interface
 
 uses Classes, Contnrs,
   CastleVectors, CastleComponentSerialize, CastleCameras, CastleViewport,
-  CastleUIControls, CastleControls, CastleKeysMouse;
+  CastleUIControls, CastleControls, CastleKeysMouse, CastleTimeUtils;
 
 type
   { Main view, where most of the application logic takes place. }
@@ -32,11 +32,14 @@ type
     WalkNavigation1: TCastleWalkNavigation;
     MainViewport: TCastleViewport;
     RectHint: TCastleRectangleControl;
+    DesignEngineHeader: TCastleUserInterface;
     FactorySpawnBody: TCastleComponentFactory;
     ButtonControllersInitialize: TCastleButton;
   private
     LeftTriggerPressed: Boolean;
     RightTriggerPressed: Boolean;
+    { Track time since any activity, to redisplay the hint after some time. }
+    TimeSinceActivity: TFloatTime;
     procedure ClickControllersInitialize(Sender: TObject);
   public
     constructor Create(AOwner: TComponent); override;
@@ -89,6 +92,8 @@ procedure TViewMain.Update(const SecondsPassed: Single; var HandleInput: Boolean
     end;
   end;
 
+const
+  TimeToShowHint = 5 * 60.0; // 5 minutes
 begin
   inherited;
   { This virtual method is executed every frame (many times per second). }
@@ -118,6 +123,21 @@ begin
   ButtonControllersInitialize.Caption := Format('Reinitialize controllers (%d)', [
     Controllers.Count
   ]);
+
+  // update TimeSinceActivity
+  if WalkNavigation1.Input_Forward.IsPressed(Container) or
+     WalkNavigation1.Input_Backward.IsPressed(Container) or
+     WalkNavigation1.Input_LeftStrafe.IsPressed(Container) or
+     WalkNavigation1.Input_RightStrafe.IsPressed(Container) then
+    TimeSinceActivity := 0;
+  TimeSinceActivity := TimeSinceActivity + SecondsPassed;
+
+  // show hint after TimeToShowHint passed without activity
+  if TimeSinceActivity >= TimeToShowHint then
+  begin
+    RectHint.Exists := true;
+    DesignEngineHeader.Exists := true;
+  end;
 end;
 
 function TViewMain.Press(const Event: TInputPressRelease): Boolean;
@@ -178,9 +198,12 @@ begin
     not handled in children controls.
   }
 
+  TimeSinceActivity := 0;
+
   if Event.IsKey(keyF1) or Event.IsController(gbMenu) then
   begin
     RectHint.Exists := not RectHint.Exists;
+    DesignEngineHeader.Exists := not DesignEngineHeader.Exists;
     Exit(true); // input was handled
   end;
 
