@@ -9,6 +9,7 @@ Show simple 3D level where you can
 Using [Castle Game Engine](https://castle-engine.io/).
 
 ![Screenshot](screenshot.png)
+![Screenshot](screenshot2.png)
 
 ## Building
 
