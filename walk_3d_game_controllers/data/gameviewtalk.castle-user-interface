@@ -115,7 +115,7 @@
             },
             {
               "$$ClassName" : "TCastleUserInterface",
-              "Height" : 5.0000000000000000E+001,
+              "Height" : 9.0000000000000000E+001,
               "HorizontalAnchorParent" : "hpMiddle",
               "HorizontalAnchorSelf" : "hpMiddle",
               "Name" : "Group1",
@@ -142,6 +142,7 @@
                   "CustomBackgroundPressed" : {
                     "$$ClassName" : "TCastleImagePersistent"
                   },
+                  "CustomFont" : "FontRobotoRegular",
                   "HorizontalAnchorParent" : "hpRight",
                   "HorizontalAnchorSelf" : "hpRight",
                   "Image" : {
@@ -149,6 +150,7 @@
                   },
                   "Name" : "ButtonOK",
                   "PaddingHorizontal" : 5.0000000000000000E+001,
+                  "PaddingVertical" : 2.0000000000000000E+001,
                   "Tooltip" : "Escape on keyboard. A or B on game controller"
                 }
               ]
