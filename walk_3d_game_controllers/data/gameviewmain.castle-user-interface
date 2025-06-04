@@ -327,6 +327,7 @@
               {
                 "$$ClassName" : "TCastleScene",
                 "Cache" : true,
+                "Collides" : false,
                 "ExposeTransforms" : [
                 ],
                 "Name" : "SceneBirchTree11",
@@ -349,6 +350,7 @@
               {
                 "$$ClassName" : "TCastleScene",
                 "Cache" : true,
+                "Collides" : false,
                 "ExposeTransforms" : [
                 ],
                 "Name" : "SceneBirchTree12",
@@ -371,6 +373,7 @@
               {
                 "$$ClassName" : "TCastleScene",
                 "Cache" : true,
+                "Collides" : false,
                 "ExposeTransforms" : [
                 ],
                 "Name" : "SceneBirchTree13",
@@ -393,6 +396,7 @@
               {
                 "$$ClassName" : "TCastleScene",
                 "Cache" : true,
+                "Collides" : false,
                 "ExposeTransforms" : [
                 ],
                 "Name" : "SceneBirchTree14",
@@ -416,6 +420,7 @@
               {
                 "$$ClassName" : "TCastleScene",
                 "Cache" : true,
+                "Collides" : false,
                 "ExposeTransforms" : [
                 ],
                 "Name" : "SceneMapleTree21",
@@ -437,6 +442,7 @@
               {
                 "$$ClassName" : "TCastleScene",
                 "Cache" : true,
+                "Collides" : false,
                 "ExposeTransforms" : [
                 ],
                 "Name" : "SceneMapleTree23",
@@ -458,6 +464,7 @@
               {
                 "$$ClassName" : "TCastleScene",
                 "Cache" : true,
+                "Collides" : false,
                 "ExposeTransforms" : [
                 ],
                 "Name" : "SceneMapleTree25",
@@ -481,6 +488,7 @@
               {
                 "$$ClassName" : "TCastleScene",
                 "Cache" : true,
+                "Collides" : false,
                 "ExposeTransforms" : [
                 ],
                 "Name" : "SceneMapleTree26",
@@ -502,6 +510,7 @@
               {
                 "$$ClassName" : "TCastleScene",
                 "Cache" : true,
+                "Collides" : false,
                 "ExposeTransforms" : [
                 ],
                 "Name" : "SceneMapleTree28",
@@ -523,6 +532,7 @@
               {
                 "$$ClassName" : "TCastleScene",
                 "Cache" : true,
+                "Collides" : false,
                 "ExposeTransforms" : [
                 ],
                 "Name" : "SceneMapleTree29",
@@ -544,6 +554,7 @@
               {
                 "$$ClassName" : "TCastleScene",
                 "Cache" : true,
+                "Collides" : false,
                 "ExposeTransforms" : [
                 ],
                 "Name" : "SceneMapleTree30",
@@ -565,6 +576,7 @@
               {
                 "$$ClassName" : "TCastleScene",
                 "Cache" : true,
+                "Collides" : false,
                 "ExposeTransforms" : [
                 ],
                 "Name" : "SceneMapleTree27",
@@ -586,6 +598,7 @@
               {
                 "$$ClassName" : "TCastleScene",
                 "Cache" : true,
+                "Collides" : false,
                 "ExposeTransforms" : [
                 ],
                 "Name" : "SceneMapleTree22",
@@ -607,6 +620,7 @@
               {
                 "$$ClassName" : "TCastleScene",
                 "Cache" : true,
+                "Collides" : false,
                 "ExposeTransforms" : [
                 ],
                 "Name" : "SceneMapleTree24",
@@ -1117,6 +1131,56 @@
                 ]
               }
             ]
+          },
+          {
+            "$$ClassName" : "TCastleTransform",
+            "Exists" : false,
+            "Name" : "Aliens",
+            "$Children" : [
+              {
+                "$$ClassName" : "TCastleTransformDesign",
+                "Name" : "DesignAliens",
+                "RotationPersistent" : {
+                  "$$ClassName" : "TCastleVector4RotationPersistent",
+                  "W" : 3.0301308631896973E+000,
+                  "X" : -1.7263351764995605E-004,
+                  "Y" : 1.0000001192092896E+000,
+                  "Z" : -9.6310341177741066E-006
+                },
+                "ScalePersistent" : {
+                  "$$ClassName" : "TCastleVector3Persistent",
+                  "X" : 9.9999994039535522E-001
+                },
+                "TranslationPersistent" : {
+                  "$$ClassName" : "TCastleVector3Persistent",
+                  "X" : -9.0190658569335938E+000,
+                  "Y" : 9.9997520446777344E-003,
+                  "Z" : 5.9784126281738281E+001
+                },
+                "Url" : "castle-data:/alien_props.castle-transform"
+              },
+              {
+                "$$ClassName" : "TCastleSpotLight",
+                "ColorPersistent" : {
+                  "$$ClassName" : "TCastleColorRGBPersistent",
+                  "Blue" : 9.5294117927551270E-001,
+                  "Green" : 9.8823529481887817E-001
+                },
+                "CutOffAngle" : 6.1086523532867432E-001,
+                "Name" : "SpotLight1",
+                "RotationPersistent" : {
+                  "$$ClassName" : "TCastleVector4RotationPersistent",
+                  "W" : 1.5592496395111084E+000,
+                  "X" : -9.9999994039535522E-001
+                },
+                "TranslationPersistent" : {
+                  "$$ClassName" : "TCastleVector3Persistent",
+                  "X" : -4.7416024208068848E+000,
+                  "Y" : 9.4286298751831055E+000,
+                  "Z" : 5.3819694519042969E+001
+                }
+              }
+            ]
           }
         ]
       },
@@ -1161,21 +1225,16 @@
         },
         "RotationPersistent" : {
           "$$ClassName" : "TCastleVector4RotationPersistent",
-          "W" : 3.4733862876892090E+000,
-          "X" : 1.4265621080994606E-002,
-          "Y" : 9.9595224857330322E-001,
-          "Z" : 8.8744372129440308E-002
-        },
-        "ScalePersistent" : {
-          "$$ClassName" : "TCastleVector3Persistent",
-          "Y" : 1.0000001192092896E+000,
-          "Z" : 9.9999994039535522E-001
+          "W" : 8.7916171550750732E-001,
+          "X" : -6.6324132680892944E-001,
+          "Y" : 7.1573138236999512E-001,
+          "Z" : 2.1872253715991974E-001
         },
         "TranslationPersistent" : {
           "$$ClassName" : "TCastleVector3Persistent",
-          "X" : 1.0028190612792969E+001,
-          "Y" : 1.4471901893615723E+001,
-          "Z" : -4.8941333770751953E+001
+          "X" : 1.4017194747924805E+001,
+          "Y" : 2.4628622055053711E+001,
+          "Z" : 4.8065624237060547E+001
         }
       },
       "InternalDesignNavigations[dnFly]" : {

@@ -11,9 +11,15 @@ type
     { Components designed using CGE editor.
       These fields will be automatically initialized at Start. }
     ButtonOK: TCastleButton;
+    LabelSpeaker: TCastleLabel;
+    LabelMessage: TCastleLabel;
+    ButtonOpenUrl: TCastleButton;
   private
     procedure ClickOK(Sender: TObject);
+    procedure ClickUrl(Sender: TObject);
   public
+    // Set before Start.
+    Speaker, Message, Url: String;
     constructor Create(AOwner: TComponent); override;
     procedure Start; override;
     procedure Update(const SecondsPassed: Single; var HandleInput: boolean); override;
@@ -24,6 +30,8 @@ var
   ViewTalk: TViewTalk;
 
 implementation
+
+uses CastleOpenDocument;
 
 constructor TViewTalk.Create(AOwner: TComponent);
 begin
@@ -37,6 +45,11 @@ begin
   inherited;
   { Executed once when view starts. }
   ButtonOK.OnClick := {$ifdef FPC}@{$endif} ClickOK;
+  ButtonOpenUrl.OnClick := {$ifdef FPC}@{$endif} ClickUrl;
+
+  LabelSpeaker.Caption := Speaker;
+  LabelMessage.Caption := Message;
+  ButtonOpenUrl.Exists := Url <> '';
 end;
 
 procedure TViewTalk.Update(const SecondsPassed: Single; var HandleInput: boolean);
@@ -63,6 +76,11 @@ end;
 procedure TViewTalk.ClickOK(Sender: TObject);
 begin
   Container.PopView(Self);
+end;
+
+procedure TViewTalk.ClickUrl(Sender: TObject);
+begin
+  OpenUrl(Url);
 end;
 
 end.

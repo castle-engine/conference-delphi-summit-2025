@@ -13,9 +13,9 @@
   ----------------------------------------------------------------------------
 }
 
-{ Test view for village assets.
+{ Test view for sci-fi assets.
   Not actualy accessible for the user. }
-unit GameViewVillageAssetsTest;
+unit GameViewSciFiAssetsTest;
 
 interface
 
@@ -23,7 +23,7 @@ uses Classes,
   CastleVectors, CastleUIControls, CastleControls, CastleKeysMouse;
 
 type
-  TViewVillageAssetsTest = class(TCastleView)
+  TViewSciFiAssetsTest = class(TCastleView)
   published
     { Components designed using CGE editor.
       These fields will be automatically initialized at Start. }
@@ -35,23 +35,23 @@ type
   end;
 
 var
-  ViewVillageAssetsTest: TViewVillageAssetsTest;
+  ViewSciFiAssetsTest: TViewSciFiAssetsTest;
 
 implementation
 
-constructor TViewVillageAssetsTest.Create(AOwner: TComponent);
+constructor TViewSciFiAssetsTest.Create(AOwner: TComponent);
 begin
   inherited;
-  DesignUrl := 'castle-data:/gameviewvillageassetstest.castle-user-interface';
+  DesignUrl := 'castle-data:/gameviewscifiassetstest.castle-user-interface';
 end;
 
-procedure TViewVillageAssetsTest.Start;
+procedure TViewSciFiAssetsTest.Start;
 begin
   inherited;
   { Executed once when view starts. }
 end;
 
-procedure TViewVillageAssetsTest.Update(const SecondsPassed: Single; var HandleInput: boolean);
+procedure TViewSciFiAssetsTest.Update(const SecondsPassed: Single; var HandleInput: boolean);
 begin
   inherited;
   { Executed every frame. }

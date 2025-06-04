@@ -18,7 +18,8 @@
         "<b>Castle Game Engine</b> ",
         "Make games using Pascal!",
         "Take the gamepad (<i>long press Xbox ball to wake it up</i>) and play.",
-        "Use laptop to tweak this demo code and data for others."
+        "Can you find the secret message?",
+        "And use laptop to tweak this demo code and data!"
       ],
       "TranslationPersistent" : {
         "$$ClassName" : "TCastleVector2Persistent",

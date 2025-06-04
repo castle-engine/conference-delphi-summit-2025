@@ -152,6 +152,30 @@
                   "PaddingHorizontal" : 5.0000000000000000E+001,
                   "PaddingVertical" : 2.0000000000000000E+001,
                   "Tooltip" : "Escape on keyboard. A or B on game controller"
+                },
+                {
+                  "$$ClassName" : "TCastleButton",
+                  "Caption" : "Why?",
+                  "CustomBackgroundDisabled" : {
+                    "$$ClassName" : "TCastleImagePersistent"
+                  },
+                  "CustomBackgroundFocused" : {
+                    "$$ClassName" : "TCastleImagePersistent"
+                  },
+                  "CustomBackgroundNormal" : {
+                    "$$ClassName" : "TCastleImagePersistent"
+                  },
+                  "CustomBackgroundPressed" : {
+                    "$$ClassName" : "TCastleImagePersistent"
+                  },
+                  "CustomFont" : "FontRobotoRegular",
+                  "Image" : {
+                    "$$ClassName" : "TCastleImagePersistent"
+                  },
+                  "Name" : "ButtonOpenUrl",
+                  "PaddingHorizontal" : 5.0000000000000000E+001,
+                  "PaddingVertical" : 2.0000000000000000E+001,
+                  "Tooltip" : "Escape on keyboard. A or B on game controller"
                 }
               ]
             }
