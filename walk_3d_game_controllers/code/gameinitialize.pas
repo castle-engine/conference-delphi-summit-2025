@@ -66,6 +66,7 @@ initialization
 
   { Optionally, adjust window fullscreen state and size at this point.
     See https://castle-engine.io/window_size . }
+  Window.FullScreen := true;
 
   { Handle command-line parameters like --fullscreen and --window.
     By doing this last, you let user to override your fullscreen / mode setup. }
