@@ -10,6 +10,7 @@ Using [Castle Game Engine](https://castle-engine.io/).
 
 ![Screenshot](screenshot.png)
 ![Screenshot](screenshot2.png)
+![Screenshot](screenshot3.png)
 
 ## Building
 
