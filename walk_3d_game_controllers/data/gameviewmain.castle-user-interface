@@ -2144,6 +2144,107 @@
                   ]
                 }
               ]
+            },
+            {
+              "$$ClassName" : "TCastleHorizontalGroup",
+              "Name" : "HorizontalGroup10",
+              "TranslationPersistent" : {
+                "$$ClassName" : "TCastleVector2Persistent",
+                "Y" : -2.8800000000000000E+002
+              },
+              "VerticalAnchorParent" : "vpTop",
+              "VerticalAnchorSelf" : "vpTop",
+              "$Children" : [
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell28",
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.0000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 9.6862745285034180E-001
+                      },
+                      "Name" : "Label29",
+                      "Text" : [
+                        "Talk (horse!)"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell29",
+                  "TranslationPersistent" : {
+                    "$$ClassName" : "TCastleVector2Persistent",
+                    "X" : 2.0000000000000000E+002
+                  },
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.2000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 9.6862745285034180E-001
+                      },
+                      "Name" : "Label30",
+                      "Text" : [
+                        "E"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                },
+                {
+                  "$$ClassName" : "TCastleUserInterface",
+                  "Height" : 3.2000000000000000E+001,
+                  "Name" : "Cell30",
+                  "TranslationPersistent" : {
+                    "$$ClassName" : "TCastleVector2Persistent",
+                    "X" : 4.2000000000000000E+002
+                  },
+                  "VerticalAnchorParent" : "vpMiddle",
+                  "VerticalAnchorSelf" : "vpMiddle",
+                  "Width" : 2.0000000000000000E+002,
+                  "$Children" : [
+                    {
+                      "$$ClassName" : "TCastleLabel",
+                      "ColorPersistent" : {
+                        "$$ClassName" : "TCastleColorPersistent",
+                        "Green" : 9.9607843160629272E-001,
+                        "Red" : 9.6862745285034180E-001
+                      },
+                      "Name" : "Label31",
+                      "Text" : [
+                        "X"
+                      ],
+                      "TranslationPersistent" : {
+                        "$$ClassName" : "TCastleVector2Persistent",
+                        "X" : 1.0000000000000000E+001,
+                        "Y" : 1.0000000000000000E+001
+                      }
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }

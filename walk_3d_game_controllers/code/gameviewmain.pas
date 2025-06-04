@@ -55,7 +55,8 @@ implementation
 
 uses SysUtils,
   CastleInputs, CastleGameControllers, CastleStringUtils, CastleTransform,
-  CastleLog;
+  CastleLog, CastleUtils,
+  GameViewTalk;
 
 { TViewMain ----------------------------------------------------------------- }
 
@@ -144,18 +145,24 @@ function TViewMain.Press(const Event: TInputPressRelease): Boolean;
 const
   ForceStrength = 3000;
 
-  { Push TCastleRigidBody in front. }
+  { Shoot ray through the center of the viewport, see what TCastleTransform
+    is hit. }
+  function GetTransformHit: TCastleTransform;
+  begin
+    Result := MainViewport.TransformHit(
+      Vector2(
+        MainViewport.EffectiveWidth / 2,
+        MainViewport.EffectiveHeight / 2),
+      false);
+  end;
+
+  { Push TCastleRigidBody in front of you. }
   procedure PushForce;
   var
     CamPos, CamDir, CamUp: TVector3;
     TransformHit: TCastleTransform;
   begin
-    // Shoot ray through the center of the viewport.
-    TransformHit := MainViewport.TransformHit(
-      Vector2(
-        MainViewport.EffectiveWidth / 2,
-        MainViewport.EffectiveHeight / 2),
-      false);
+    TransformHit := GetTransformHit;
     if (TransformHit <> nil) and
        (TransformHit.RigidBody <> nil) and
        // mesh and plane colliders are static anyway, pushing them would do nothing
@@ -184,6 +191,27 @@ const
     NewTransform.RigidBody.AddForce(CamDir * ForceStrength, false);
   end;
 
+  procedure TryTalk;
+  var
+    TransformHit: TCastleTransform;
+  begin
+    TransformHit := GetTransformHit;
+    { For now, trivial: just check did we hit a horse,
+      and display a hardcoded message in ViewTalk.
+      To make it real:
+      - Customize
+        - ViewTalk.LabelSpeaker.Caption
+        - ViewTalk.LabelMessage.Caption
+        depending on who, and in what condition, speaks.
+      - Use TCastleBehavior to detect NPCs (speakers), and hold their logic.
+    }
+    if ArrayContainsString(TransformHit.Name, ['SceneHorse1',
+      'SceneHorse2', 'SceneHorseWhite1']) then
+    begin
+      Container.PushView(ViewTalk);
+    end
+  end;
+
 begin
   Result := inherited;
   if Result then Exit; // allow the ancestor to handle keys
@@ -199,6 +227,11 @@ begin
   }
 
   TimeSinceActivity := 0;
+
+  { Don't handle inputs if we're not front-most view.
+    This is just extra check, as TViewTalk already has InterceptInput = @true. }
+  if Container.FrontView <> Self then
+    Exit;
 
   if Event.IsKey(keyF1) or Event.IsController(gbMenu) then
   begin
@@ -216,6 +249,12 @@ begin
   if Event.IsKey(keyEnter) then
   begin
     PushForce;
+    Exit(true); // input was handled
+  end;
+
+  if Event.IsKey(keyE) or Event.IsController(gbWest) then
+  begin
+    TryTalk;
     Exit(true); // input was handled
   end;
 end;
