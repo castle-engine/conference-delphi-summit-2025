@@ -129,7 +129,7 @@
               "$Children" : [
                 {
                   "$$ClassName" : "TCastleButton",
-                  "Caption" : "OK",
+                  "Caption" : "OK (A)",
                   "CustomBackgroundDisabled" : {
                     "$$ClassName" : "TCastleImagePersistent"
                   },
@@ -155,7 +155,7 @@
                 },
                 {
                   "$$ClassName" : "TCastleButton",
-                  "Caption" : "Why?",
+                  "Caption" : "Why? (Y)",
                   "CustomBackgroundDisabled" : {
                     "$$ClassName" : "TCastleImagePersistent"
                   },

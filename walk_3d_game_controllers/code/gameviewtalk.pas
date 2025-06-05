@@ -65,10 +65,18 @@ begin
   // if Result then Exit;
 
   if Event.IsKey(keyEscape) or
-     Event.IsController(gbNorth) or
-     Event.IsController(gbEast) then
+     Event.IsController(gbSouth)
+     // don't react to B, would cause crouch right after TViewMain.Resume
+     {or
+     Event.IsController(gbEast)} then
   begin
-    Container.PopView(Self);
+    ClickOK(nil);
+    Exit(true);
+  end;
+
+  if Event.IsController(gbNorth) then
+  begin
+    ClickUrl(nil);
     Exit(true);
   end;
 end;

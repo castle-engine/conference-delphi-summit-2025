@@ -52,6 +52,8 @@ type
     procedure Start; override;
     procedure Update(const SecondsPassed: Single; var HandleInput: Boolean); override;
     function Press(const Event: TInputPressRelease): Boolean; override;
+    procedure Pause; override;
+    procedure Resume; override;
   end;
 
 var
@@ -327,6 +329,19 @@ begin
   { Should never be needed on Windows.
     May be needed on Linux to detect newly connected controllers. }
   Controllers.Initialize;
+end;
+
+procedure TViewMain.Pause;
+begin
+  inherited;
+  { Do not detect A / B (jump / crouch) during talk. }
+  WalkNavigation1.Exists := false;
+end;
+
+procedure TViewMain.Resume;
+begin
+  WalkNavigation1.Exists := true;
+  inherited;
 end;
 
 end.
