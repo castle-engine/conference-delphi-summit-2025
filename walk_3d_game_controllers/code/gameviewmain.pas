@@ -75,9 +75,15 @@ begin
 end;
 
 procedure TViewMain.Start;
+const
+  { For gamepad usage at Delphi Summit, to make it easier to Aim to talk,
+    slow down rotations. }
+  RotationSpeed = 0.33;
 begin
   inherited;
   WalkNavigation1.UseGameController;
+  WalkNavigation1.RotationHorizontalSpeed := WalkNavigation1.RotationHorizontalSpeed * RotationSpeed;
+  WalkNavigation1.RotationVerticalSpeed := WalkNavigation1.RotationVerticalSpeed * RotationSpeed;
   Controllers.Initialize;
   ButtonControllersInitialize.OnClick :=
     {$ifdef FPC}@{$endif} ClickControllersInitialize;
