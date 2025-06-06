@@ -21,7 +21,8 @@ interface
 uses Classes, Contnrs,
   CastleVectors, CastleComponentSerialize, CastleCameras, CastleViewport,
   CastleUIControls, CastleControls, CastleKeysMouse, CastleTimeUtils,
-  CastleTransform, CastleScene;
+  CastleTransform, CastleScene,
+  GameBehaviorSpeaker;
 
 type
   { Main view, where most of the application logic takes place. }
@@ -39,14 +40,19 @@ type
     Aliens: TCastleTransform;
     DesignAliens: TCastleTransformDesign;
     SceneHorse1, SceneHorse2, SceneHorseWhite1: TCastleTransform;
+    HintTalk: TCastleUserInterface;
   private
     SceneAlien, SceneAlienComputer: TCastleScene;
     AlienCylinder: TCastleTransform;
     LeftTriggerPressed: Boolean;
     RightTriggerPressed: Boolean;
+    SpeakerMessengerActive, SpeakerMessengerNotActive: TBehaviorSpeaker;
     { Track time since any activity, to redisplay the hint after some time. }
     TimeSinceActivity: TFloatTime;
     procedure ClickControllersInitialize(Sender: TObject);
+    { Shoot ray through the center of the viewport, see what TCastleTransform
+      is hit. }
+    function GetTransformHit: TCastleTransform;
   public
     constructor Create(AOwner: TComponent); override;
     procedure Start; override;
@@ -75,6 +81,53 @@ begin
 end;
 
 procedure TViewMain.Start;
+
+  { Add TBehaviorSpeaker to all characters that can talk.
+    This allows to later detect when to start talking,
+    when to show HintTalk. }
+  procedure AddSpeakers;
+  var
+    Speaker: TBehaviorSpeaker;
+  begin
+    Speaker := TBehaviorSpeaker.Create(FreeAtStop);
+    Speaker.SpeakerName := 'Horse says:';
+    Speaker.Message := 'A strange object fell from the sky last night.' + NL +
+      'Look behind the rocks.';
+    SceneHorse1.AddBehavior(Speaker);
+
+    Speaker := TBehaviorSpeaker.Create(FreeAtStop);
+    Speaker.SpeakerName := 'Horse says:';
+    Speaker.Message := 'A strange object fell from the sky last night.' + NL +
+      'Look behind the rocks.';
+    SceneHorse2.AddBehavior(Speaker);
+
+    Speaker := TBehaviorSpeaker.Create(FreeAtStop);
+    Speaker.SpeakerName := 'Horse says:';
+    Speaker.Message := 'A strange object fell from the sky last night.' + NL +
+      'Look behind the rocks.';
+    SceneHorseWhite1.AddBehavior(Speaker);
+
+    Speaker := TBehaviorSpeaker.Create(FreeAtStop);
+    Speaker.SpeakerName := 'Computer says:';
+    Speaker.Message := 'Link established.' + NL +
+      'You can talk with The Messenger.';
+    SceneAlienComputer.AddBehavior(Speaker);
+
+    SpeakerMessengerNotActive := TBehaviorSpeaker.Create(FreeAtStop);
+    SpeakerMessengerNotActive.Url := '';
+    SpeakerMessengerNotActive.SpeakerName := 'Empty Cylinder says:';
+    SpeakerMessengerNotActive.Message :=
+            '<i>(The cylinder is empty and says nothing.)</i>';
+    AlienCylinder.AddBehavior(SpeakerMessengerNotActive);
+
+    // don't add this behavior anywhere yet
+    SpeakerMessengerActive := TBehaviorSpeaker.Create(FreeAtStop);
+    SpeakerMessengerActive.SpeakerName := 'The Messenger says:';
+    SpeakerMessengerActive.Message := '<b>I am The Messenger.</b>' + NL +
+      '<b><i>Pascal rules!</i></b>';
+    SpeakerMessengerActive.Url := 'https://castle-engine.io/why_pascal';
+  end;
+
 const
   { For gamepad usage at Delphi Summit, to make it easier to Aim to talk,
     slow down rotations. }
@@ -87,11 +140,14 @@ begin
   Controllers.Initialize;
   ButtonControllersInitialize.OnClick :=
     {$ifdef FPC}@{$endif} ClickControllersInitialize;
+
   { These components are within the DesignAliens,
     so we cannot access them just by declaring them in the published section. }
   SceneAlien := DesignAliens.DesignedComponent('SceneAlien') as TCastleScene;
   SceneAlienComputer := DesignAliens.DesignedComponent('SceneAlienComputer') as TCastleScene;
   AlienCylinder := DesignAliens.DesignedComponent('AlienCylinder') as TCastleTransform;
+
+  AddSpeakers;
 end;
 
 procedure TViewMain.Update(const SecondsPassed: Single; var HandleInput: Boolean);
@@ -114,6 +170,8 @@ procedure TViewMain.Update(const SecondsPassed: Single; var HandleInput: Boolean
 
 const
   TimeToShowHint = 5 * 60.0; // 5 minutes
+var
+  TransformHit: TCastleTransform;
 begin
   inherited;
   { This virtual method is executed every frame (many times per second). }
@@ -158,22 +216,30 @@ begin
     RectHint.Exists := true;
     DesignEngineHeader.Exists := true;
   end;
+
+  // update HintTalk existence
+  if Container.FrontView = Self then
+  begin
+    TransformHit := GetTransformHit;
+    HintTalk.Exists :=
+      (TransformHit <> nil) and
+      (TransformHit.FindBehavior(TBehaviorSpeaker) <> nil);
+  end else
+    HintTalk.Exists := false;
+end;
+
+function TViewMain.GetTransformHit: TCastleTransform;
+begin
+  Result := MainViewport.TransformHit(
+    Vector2(
+      MainViewport.EffectiveWidth / 2,
+      MainViewport.EffectiveHeight / 2),
+    false);
 end;
 
 function TViewMain.Press(const Event: TInputPressRelease): Boolean;
 const
   ForceStrength = 3000;
-
-  { Shoot ray through the center of the viewport, see what TCastleTransform
-    is hit. }
-  function GetTransformHit: TCastleTransform;
-  begin
-    Result := MainViewport.TransformHit(
-      Vector2(
-        MainViewport.EffectiveWidth / 2,
-        MainViewport.EffectiveHeight / 2),
-      false);
-  end;
 
   { Push TCastleRigidBody in front of you. }
   procedure PushForce;
@@ -213,73 +279,48 @@ const
   procedure TryTalk;
   var
     TransformHit: TCastleTransform;
+    Speaker: TBehaviorSpeaker;
   begin
     TransformHit := GetTransformHit;
 
-    { For now, the whole logic (did we show already aliens etc.) is in this view.
-      And we hardcoded which scene names -> result in which speaker/message.
-
-      For a real game, to make it more flexible, you could use TCastleBehavior
-      ( see https://castle-engine.io/behaviors ):
-      - to detect NPCs (speakers),
-      - to hold their logic ("has this NPC spoke already?"),
-      - to hold their messages.
-    }
     if TransformHit <> nil then
     begin
-      { Comparing with TransformHit.Name would also work, but is a little dirtier,
-        since the SceneHorseXxx properties can be checked and used for other
-        purposes too. }
-      // if ArrayContainsString(TransformHit.Name, ['SceneHorse1',
-      //   'SceneHorse2', 'SceneHorseWhite1']) then
-      if (TransformHit = SceneHorse1) or
-         (TransformHit = SceneHorse2) or
-         (TransformHit = SceneHorseWhite1) then
+      Speaker := TransformHit.FindBehavior(TBehaviorSpeaker) as TBehaviorSpeaker;
+      if Speaker <> nil then
       begin
-        Aliens.Exists := true;
-        ViewTalk.Url := '';
-        ViewTalk.Speaker := 'Horse says:';
-        ViewTalk.Message :=
-          'A strange object fell from the sky last night.' + NL +
-          'Look behind the rocks.';
-          // Unsure if this is understandable joke in English.
-          //  + NL +
-          // 'Also, <i>neeeeigh!</i>!';
+        // show ViewTalk to show what the speaker says
+        ViewTalk.Url := Speaker.Url;
+        ViewTalk.Speaker := Speaker.SpeakerName;
+        ViewTalk.Message := Speaker.Message;
         Container.PushView(ViewTalk);
-      end else
-      // if ArrayContainsString(TransformHit.Name, ['SceneAlienComputer']) then
-      if TransformHit = SceneAlienComputer then
-      begin
-        SceneAlien.Exists := true;
-        ViewTalk.Url := '';
-        ViewTalk.Speaker := 'Computer says:';
-        ViewTalk.Message :=
-          'Link established.' + NL +
-          'You can talk with The Messenger.';
-        Container.PushView(ViewTalk);
-      end else
-      if TransformHit = AlienCylinder then
-      begin
-        if SceneAlien.Exists then
+
+        { Special logic for some speakers. }
+        { Comparing with TransformHit.Name would also work, but is a little dirtier,
+          since the SceneHorseXxx properties can be checked and used for other
+          purposes too. }
+        // if ArrayContainsString(TransformHit.Name, ['SceneHorse1',
+        //   'SceneHorse2', 'SceneHorseWhite1']) then
+
+        // show Aliens 3D stuff when some horse talks
+        if (TransformHit = SceneHorse1) or
+          (TransformHit = SceneHorse2) or
+          (TransformHit = SceneHorseWhite1) then
+          Aliens.Exists := true;
+
+        // show SceneAlien when SceneAlienComputer talks,
+        // and change AlienCylinder response
+        if TransformHit = SceneAlienComputer then
         begin
-          ViewTalk.Url := 'https://castle-engine.io/why_pascal';
-          ViewTalk.Speaker := 'The Messenger says:';
-          ViewTalk.Message :=
-            '<b>I am The Messenger.</b>' + NL +
-            '<b><i>Pascal rules!</i></b>';
-          Container.PushView(ViewTalk);
-        end else
-        begin
-          ViewTalk.Url := '';
-          ViewTalk.Speaker := 'Empty Cylinder says:';
-          ViewTalk.Message :=
-            '<i>(The cylinder is empty and says nothing.)</i>';
-          Container.PushView(ViewTalk);
+          AlienCylinder.RemoveBehavior(SpeakerMessengerNotActive);
+          AlienCylinder.AddBehavior(SpeakerMessengerActive);
+          SceneAlien.Exists := true;
         end;
       end else
+      begin
         WritelnLog('Hit transform %s, but it is not a speaker.', [
           TransformHit.Name
         ]);
+      end;
     end;
   end;
 

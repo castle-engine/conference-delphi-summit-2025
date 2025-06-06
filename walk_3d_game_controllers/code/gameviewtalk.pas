@@ -1,3 +1,19 @@
+{
+  Copyright 2025-2025 Michalis Kamburelis.
+
+  This file is part of "Castle Game Engine".
+
+  "Castle Game Engine" is free software; see the file LICENSE,
+  included in this distribution, for details about the copyright.
+
+  "Castle Game Engine" is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+  ----------------------------------------------------------------------------
+}
+
+{ View to show what some NPC says, also allow to open URL (TViewTalk). }
 unit GameViewTalk;
 
 interface
@@ -6,6 +22,7 @@ uses Classes,
   CastleVectors, CastleUIControls, CastleControls, CastleKeysMouse;
 
 type
+  { Show what some NPC says, also allow to open URL. }
   TViewTalk = class(TCastleView)
   published
     { Components designed using CGE editor.
@@ -22,7 +39,6 @@ type
     Speaker, Message, Url: String;
     constructor Create(AOwner: TComponent); override;
     procedure Start; override;
-    procedure Update(const SecondsPassed: Single; var HandleInput: boolean); override;
     function Press(const Event: TInputPressRelease): Boolean; override;
   end;
 
@@ -52,29 +68,21 @@ begin
   ButtonOpenUrl.Exists := Url <> '';
 end;
 
-procedure TViewTalk.Update(const SecondsPassed: Single; var HandleInput: boolean);
-begin
-  inherited;
-  { Executed every frame. }
-end;
-
 function TViewTalk.Press(const Event: TInputPressRelease): Boolean;
 begin
   Result := inherited;
-  // because of InterceptInput, inherited always returns true
+  // because of InterceptInput, inherited always returns true, so don't do below:
   // if Result then Exit;
 
   if Event.IsKey(keyEscape) or
-     Event.IsController(gbSouth)
-     // don't react to B, would cause crouch right after TViewMain.Resume
-     {or
-     Event.IsController(gbEast)} then
+     Event.IsController(gbSouth) then
   begin
     ClickOK(nil);
     Exit(true);
   end;
 
-  if Event.IsController(gbNorth) then
+  if Event.IsKey('?') or
+     Event.IsController(gbNorth) then
   begin
     ClickUrl(nil);
     Exit(true);

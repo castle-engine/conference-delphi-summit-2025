@@ -1232,20 +1232,20 @@
         },
         "RotationPersistent" : {
           "$$ClassName" : "TCastleVector4RotationPersistent",
-          "W" : 3.3530814647674561E+000,
-          "X" : -5.0060227513313293E-003,
-          "Y" : 9.9914872646331787E-001,
-          "Z" : -4.0949262678623199E-002
+          "W" : 2.7413814067840576E+000,
+          "X" : -1.3917553238570690E-002,
+          "Y" : 9.9777203798294067E-001,
+          "Z" : 6.5248295664787292E-002
         },
         "ScalePersistent" : {
           "$$ClassName" : "TCastleVector3Persistent",
-          "Y" : 1.0000001192092896E+000
+          "Y" : 9.9999988079071045E-001
         },
         "TranslationPersistent" : {
           "$$ClassName" : "TCastleVector3Persistent",
-          "X" : -5.6102242469787598E+000,
+          "X" : 1.5072098731994629E+001,
           "Y" : 2.0000000000000000E+000,
-          "Z" : -3.4993385314941406E+001
+          "Z" : -1.6918237686157227E+001
         }
       },
       "InternalDesignNavigations[dnFly]" : {
@@ -2322,7 +2322,50 @@
     },
     {
       "$$ClassName" : "TCastleCrosshair",
-      "Name" : "Crosshair1"
+      "Name" : "Crosshair1",
+      "$Children" : [
+        {
+          "$$ClassName" : "TCastleRectangleControl",
+          "AutoSizeToChildren" : true,
+          "AutoSizeToChildrenPaddingRight" : 3.0000000000000000E+001,
+          "AutoSizeToChildrenPaddingTop" : 3.0000000000000000E+001,
+          "ColorPersistent" : {
+            "$$ClassName" : "TCastleColorPersistent",
+            "Alpha" : 6.8627452850341797E-001,
+            "Blue" : 4.3137256056070328E-002,
+            "Green" : 4.3137256056070328E-002,
+            "Red" : 4.3137256056070328E-002
+          },
+          "HorizontalAnchorParent" : "hpMiddle",
+          "HorizontalAnchorSelf" : "hpMiddle",
+          "Name" : "HintTalk",
+          "TranslationPersistent" : {
+            "$$ClassName" : "TCastleVector2Persistent",
+            "Y" : 1.0000000000000000E+001
+          },
+          "VerticalAnchorParent" : "vpTop",
+          "$Children" : [
+            {
+              "$$ClassName" : "TCastleLabel",
+              "ColorPersistent" : {
+                "$$ClassName" : "TCastleColorPersistent",
+                "Blue" : 1.0000000000000000E+000,
+                "Green" : 1.0000000000000000E+000,
+                "Red" : 1.0000000000000000E+000
+              },
+              "Name" : "LabelHint",
+              "Text" : [
+                "Press key E / gamepad Y to talk"
+              ],
+              "TranslationPersistent" : {
+                "$$ClassName" : "TCastleVector2Persistent",
+                "X" : 3.0000000000000000E+001,
+                "Y" : 3.0000000000000000E+001
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "$$ClassName" : "TCastleButton",

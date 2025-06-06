@@ -125,11 +125,11 @@
               },
               "VerticalAnchorParent" : "vpTop",
               "VerticalAnchorSelf" : "vpTop",
-              "Width" : 8.9000000000000000E+002,
+              "Width" : 9.1800000000000000E+002,
               "$Children" : [
                 {
                   "$$ClassName" : "TCastleButton",
-                  "Caption" : "OK (A)",
+                  "Caption" : "OK [gamepad A]",
                   "CustomBackgroundDisabled" : {
                     "$$ClassName" : "TCastleImagePersistent"
                   },
@@ -149,13 +149,13 @@
                     "$$ClassName" : "TCastleImagePersistent"
                   },
                   "Name" : "ButtonOK",
-                  "PaddingHorizontal" : 5.0000000000000000E+001,
+                  "PaddingHorizontal" : 4.0000000000000000E+001,
                   "PaddingVertical" : 2.0000000000000000E+001,
-                  "Tooltip" : "Escape on keyboard. A or B on game controller"
+                  "Tooltip" : "Press Escape key / gamepad A"
                 },
                 {
                   "$$ClassName" : "TCastleButton",
-                  "Caption" : "Why? (Y)",
+                  "Caption" : "Why? [gamepad Y]",
                   "CustomBackgroundDisabled" : {
                     "$$ClassName" : "TCastleImagePersistent"
                   },
@@ -173,9 +173,9 @@
                     "$$ClassName" : "TCastleImagePersistent"
                   },
                   "Name" : "ButtonOpenUrl",
-                  "PaddingHorizontal" : 5.0000000000000000E+001,
+                  "PaddingHorizontal" : 4.0000000000000000E+001,
                   "PaddingVertical" : 2.0000000000000000E+001,
-                  "Tooltip" : "Escape on keyboard. A or B on game controller"
+                  "Tooltip" : "Press \"?\" key / gamepad Y"
                 }
               ]
             }
